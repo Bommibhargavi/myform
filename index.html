@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Form with Validations</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div class="container text-center my-5">
+        <button class="btn btn-primary" id="click">Click Me!</button>
+    </div>
+    <div class="container form-container" id="formContainer">
+        <form id="myForm" onsubmit="return submitForm()" class="needs-validation" novalidate>
+            <h2>Fill Your Details</h2>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" class="form-control" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" required min="1" max="120">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="designation">Designation:</label>
+                    <input type="text" class="form-control" id="designation" name="designation" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="degree">Highest Degree:</label>
+                    <input type="text" class="form-control" id="degree" name="degree" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="year">Year of Passed Out:</label>
+                    <input type="number" class="form-control" id="year" name="year" required min="1900" max="2099">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="college">College Name:</label>
+                    <input type="text" class="form-control" id="college" name="college" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <label for="address">Address:</label>
+                    <textarea class="form-control" id="address" name="address" required></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required pattern="[0-9]{10}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <label for="photo">Upload Photo:</label>
+                    <input type="file" class="form-control" id="photo" name="photo" accept="image/*" required>
+                </div>
+            </div>
+            <button class="btn btn-success" id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="container details-container" id="detailsContainer">
+        <div class="edit-button-container">
+            <button class="btn btn-secondary" id="edit" onclick="editForm()">Edit</button>
+        </div>
+        <div id="details"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+</html>
